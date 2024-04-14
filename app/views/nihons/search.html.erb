@@ -1,0 +1,11 @@
+<h3>タグリスト</h3>
+<% @tag_list.each do |list| %>
+  <%= list.tag_name %>
+  <%= "(#{list.nihons.count})" %>
+<% end %>
+<br>
+<%= "#{@tag.tag_name}" %>
+<br>
+<% @nihons.each do |nihon| %>
+  <%= link_to nihon.content, nihon %>
+<% end %>

@@ -1,0 +1,226 @@
+.box11{
+    padding: 0.5em 0.5em;
+    margin: 10em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    width: 70%;
+    
+}
+.box11 p {
+    margin: 0; 
+    padding: 0;
+}
+.box1 {
+    width: 45%;
+    text-align: center;
+    padding: 0.5em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    background: #fffaf4;/*背景色*/
+    border-left: solid 5px #ffb464;/*左線（実線 太さ 色）*/
+}
+.bg_test-text {
+                          /* 枠線指定 */
+    display:  inline-block;                         /* インラインブロックにする */
+    padding: 10px 20px;                             /* 余白指定 */
+        /* 背景色指定 */
+}
+.bg_test {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+        /* 枠線指定 */
+}
+
+.bg_test {
+    background-size: cover;
+    background-image: url(https://plus.unsplash.com/premium_photo-1668988895616-95f0ed8adba8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUU2JTk3JUE1JUU2JTlDJUFDJUU5JTg1JTkyfGVufDB8fDB8fHww);    /* 背景画像指定 */
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align:  left;
+    
+  }
+
+
+  .pi {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+        /* 枠線指定 */
+}
+
+
+  .pi {
+    background-image: url(https://media.istockphoto.com/id/674114720/ja/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E6%97%A5%E6%9C%AC%E3%81%AE%E9%85%92.webp?b=1&s=170667a&w=0&k=20&c=tYXnRVrtGMgKDBnbqTqXu6v40d6MlqgFoZugIQAIUKs=);    /* 背景画像指定 */
+}
+.box2{
+    h3{
+        /*線の種類（実線） 太さ 色*/
+        border-bottom: solid 3px rgb(82, 211, 207);
+        width: 18%;
+    }
+}
+.syurui-conatainer{
+    width: 100%;
+    margin: 10px auto;
+}
+.ginjyo-container{
+    display: flex;
+}
+
+.ginbox{
+    background-size: cover;
+    background-image: url(https://img.sogo-seibu.jp/contents/img/item/001/005924/00100014972009000908/spec_800_00100014972009000908.jpg?w=600,h=600) ;
+}
+.ginbox {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+        /* 枠線指定 */
+}
+.jyunmai-container{
+    display: flex;
+}
+.jyunbox{
+    
+    background-size: cover;
+    background-image: url(https://th.bing.com/th/id/OIP.KPqcGdArwC_-pO6BNemE9wHaHa?rs=1&pid=ImgDetMain);
+}
+.jyunbox{
+    text-align: center;
+    padding: 150px;
+}
+.honjyo-container{
+    display: flex;
+}
+.honbox{
+    background-size: cover;
+    background-image: url(https://image.raku-uru.jp/01/9565/512/nho_5131_urakasumi_hojozo_1800_01_1608691309833.png);
+}
+.honbox{
+    text-align: center;
+    padding: 150px;
+}
+
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+	display:block;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: translateX(-300%) skewX(-45deg);
+    background-color: #333;/*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:translateX(-300%) skewX(-45deg);
+	}
+	100% {
+		transform-origin:left;
+		transform:translateX(500%) skewX(-45deg);
+	}
+}
+
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+.seihou
+{
+    position: relative;
+    margin: 2em auto;
+    padding: 1.2em;
+    width: 90%;
+    color: #555555; /* 文字色 */
+    background-color: #fff;
+    border: 2px solid #f09199; /* 枠線の太さ・色 */
+    box-shadow: 0 0 5px 2px #fce2c4 inset;/* 影の色 */
+
+}
+.title-box{
+    position: absolute;
+    padding: 0 .5em;
+    left: 20px;
+    top: -15px;
+    font-weight: bold;
+    background-color:  #fff; /* タイトル背景色 */
+    color: #f09199; /* タイトル文字色 */
+}
+.syudo-pic{
+    background-image: url(https://www.rakuten.ne.jp/gold/niigata/dictionary/common/img/01/gurahu.jpg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    padding: 120px;
+   
+}
+
+
+.syudo-container{
+    display: flex;
+}
+.box10{
+    padding: 0.5em 0.5em;
+    margin: 30px;
+    
+    width: 30%;
+    
+}
+.yukimatu{
+    width: 20%;
+    margin: 30px;
+}
+.box19{
+    margin: 50px;
+    border-bottom: double 5px #010101;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touhoku</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="css/4-2-7.css">
+    </head>
+  <body>
+  <header>
+   <h1>東北の地酒</h1>
+   <div class="header-list">
+    <ul>
+     <% if user_signed_in? %>
+     
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+     <% else %>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+     <% end %>
+    </ul>
+   </div>
+   <div class="hamburger-menu">
+   <input type="checkbox" id="menu-btn-check">
+   <label for="menu-btn-check" class="menu-btn"><span></span></label>
+   <div class="menu-content">
+            <ul>
+                <li>
+                    <a href="#"><%= link_to 'おすすめの日本酒診断！！', perfumes_path %></a>
+                </li>
+                <li>
+                    <a href="#"><%= link_to "新規投稿へ", new_nihon_path %></a>
+                </li>
+                <li>
+                <% if user_signed_in? %>
+                <%= link_to "マイページへ", user_path(current_user.id) %>
+              <% end %>
+                </li>
+                <li>
+                    <a href="#"> <%= link_to "投稿一覧", post_nihons_path %></a>
+                </li>
+                <li>
+                    <a href="#"> <%= link_to 'トップページ', nihons_path %></a>
+                </li>
+            </ul>
+        </div>
+
+   </div>
+  </header>
+  <main>
+   <%= yield %>
+  </main>
+  <div class="contents">
+	<h1>Contents</h1>
+	
+</div>
+<footer>
+<div class="copyright">
+	<p>© 2018 - Organisation</p>
+</div>
+<div class="sns">
+	<a href="#" class="contact">Contact</a>
+	<a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="tw"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+	<a href="#" class="insta"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a>
+</div>
+</footer>
+
+
+ </body>
+ 
+ 
+</html>

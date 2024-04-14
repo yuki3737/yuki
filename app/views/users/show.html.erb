@@ -1,0 +1,34 @@
+
+
+<div class="user">
+   <h2>Profile</h2>
+  <div class="usershow">
+   <p>Name : <%= @user.name %></p>
+   <p>E-mail adress : <%= @user.email %></p>
+   <p>profile : <%= @user.profile %></p>
+  
+   <% if current_user.id == @user.id %>
+     <%= link_to "編集する", edit_user_registration_path %>
+   <% end %>
+  
+   <h2> ユーザーの投稿一覧</h2>
+   <% @user.nihons.each do |t| %>
+     <p>投稿者：<%= t.user.name %><br></p>
+     <p>投稿:<%= t.content %><br></p>
+     <p>内容:<%= t.body %><br></p>
+     <p>写真:<%= t.picture%><br></p>
+     
+   <% end %>
+
+
+   <h2 >ユーザーがいいねした投稿一覧</h2>
+   <% @user.liked_nihons.each do |t| %>
+     <p>投稿者:<%= t.user.name %><br></p>
+     <p>投稿:<%= t.content %><br></p>
+     <p>内容:<%= t.body %><br></p>
+     <p>写真:<%= t.picture%><br></p>
+  </div>
+   <% end %>
+
+</div>
+   <%= link_to "投稿一覧に戻る", nihons_path %>

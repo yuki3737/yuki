@@ -1,0 +1,45 @@
+<h1>評価一覧</h1>
+<div class="lectures">
+
+ 
+
+ 
+  <% @lectures.each do |t|%>
+  
+  <div style = 'margin:20px; border:2px double black; width:500px;padding-left:20px;  '>
+    <h2> 日本酒名：<%= t.name %> </h2>
+    <h4>投稿者:<%= t.username%></h4>
+ 
+ 
+ 
+  <div>
+  <h2>総合評価：
+  <span class="star-rating">
+    <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+    <span class="star-rating-back">★★★★★</span>
+  </span> 
+  </h2>
+  </div>
+ 
+ 
+ 
+ 
+ 
+  <div>
+  <h2>満足度：
+  <span class="star-rating">
+    <span class="star-rating-front" style="width: <%= getPercent(t.level) %>%;">★★★★★</span>
+    <span class="star-rating-back">★★★★★</span>
+   </span>
+  </h2>
+  </div>
+ 
+ 
+ </div>
+ 
+ <% end %>
+ </div>
+ </div>
+ 
+ <%= link_to '日本酒登録をする', lectures_new_path%>'>
+   

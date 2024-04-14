@@ -1,0 +1,64 @@
+<%= stylesheet_link_tag 'post', :media => "all" %>
+<div class="postbody">
+ <% @nihons.each do |t| %>
+    <div class="nihons">
+     
+     <% if user_signed_in? %>
+      <%= link_to t.user.name, user_path(t.user.id) %>
+      <% else %>
+      <%= t.user.name %>
+      <% end %>
+     
+     <%= t.user.email %>
+   <br>
+     <%= t.kome %>
+     ・投稿:<%= t.body %><br>
+     ・内容:<%= t.content %><br>
+     ・写真:<%= image_tag t.picture_url, size: "100x90" if t.picture? %>
+     
+  
+ 
+   <div class="likes">
+    <% if user_signed_in? %>
+    <% if current_user.already_liked?(t) %>
+    
+    <%= button_to nihon_like_path(id: t.id, nihon_id: t.id), method: :delete, class: "today" do %>
+        <p>いいねを取り消す</p><%= t.likes.count %>
+    <% end %>
+    <% else %>
+    <%= button_to nihon_likes_path(id: t.id, nihon_id: t.id), method: :post, class: "today" do %>
+        <p>いいね</p><%= t.likes.count %>
+        
+    <% end %>
+   </div>
+  <% end %>
+  <% else %>
+
+ <p>いいねの数 = </p><%= t.likes.count %>
+
+ <% end %>      
+ <%= button_to "削除する", nihon_path(t.id), method: :delete, class:"destoroy" %>
+ 
+ 
+ <%= t.created_at %>
+ <%= link_to "詳細へ", nihon_path(t.id) %>
+ <%= link_to "編集する", edit_nihon_path(t.id) %>
+ <%= link_to '評価する', lectures_new_path%>
+ 
+ </div>
+ <% end %>
+</div>
+
+   <h3>タグリスト</h3>
+  <% @tag_list.each do |list| %>
+  #<%= link_to list.tag_name, tag_nihons_path(tag_id: list.id) %>
+  <%= "(#{list.nihons.count})" %>
+  <% end %>
+
+   <% @nihons.each do |nihon| %> 
+
+  <% @nihons.each do |nihon| %> 
+      #<%= link_to tag.tag_name, tag_nihons_path(tag_id: tag.id) %>
+  <% end %>
+ <% end %>
+</div>

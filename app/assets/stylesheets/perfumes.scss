@@ -1,0 +1,22 @@
+// Place all the styles related to the perfumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.btn {
+    margin: 100px;
+    display: inline-block;
+    font-weight: 0;
+    padding: 0rem 0nline-block;
+    font-weight: 0;
+    padding: 0rem 0rem;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn:hover {
+  
+  transform: translateY(-4px);
+}
+.h1{
+    border-bottom: solid black;
+}

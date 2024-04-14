@@ -1,0 +1,61 @@
+.nihons{
+    margin: 20px;
+//   // display: flex;
+//   // flex-wrap: wrap;
+//   // justify-content: cent
+border: 1px solid #ccc;
+
+ }
+
+.postbody{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+  
+}
+.likebtn{
+    background-color: #1492AF;
+    border-bottom: 4px solid #056d84;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    padding: 1.25rem 4rem;
+    text-decoration: none;
+    transition: none;
+}
+.today:hover {
+    border-bottom: 0;
+    transform: translateY(4px);
+    margin-bottom: 4px;
+}
+
+.today{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #fdfdfc;
+    border-radius: 5px;
+    -weabkit-transition: all 0.5s;
+    transition: none;
+    margin: 20px;
+
+    border-bottom: 4px solid #000000;
+}
+  .destoroy{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #fdfdfc;
+    border-radius: 5px;
+    -weabkit-transition: all 0.5s;
+    transition: none;
+    margin: 20px;
+  }
+
+  .destoroy:hover {
+    border-bottom: 0;
+    transform: translateY(4px);
+    margin-bottom: 4px;
+}
+

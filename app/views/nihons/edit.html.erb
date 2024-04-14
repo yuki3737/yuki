@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'edit', :media => "all" %>
+<div class="post-container">
+ <p class="title">投稿編集フォーム</p>
+ <div class="tweet">
+
+  <%= form_for @nihon do |f| %>
+
+    <%= f.label :編集 %>
+    <br>
+    <%= f.text_field :picture, :size => 50 %> 
+    </br>
+
+    <div class="field">
+        <%= f.label"タグ (スペースで区切ると複数タグ登録できます)" %>
+        <%= f.text_field :tag_name, value: @tag_list,class:"form-control"%>
+    </div>
+    <div class="btn">
+      <%= f.submit "編集する" %>
+    </div>
+    <br>
+    
+    
+  <% end %>
+  </div>
+</div>
+  

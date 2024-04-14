@@ -1,0 +1,44 @@
+
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+
+
+   <h2>投稿詳細</h2>
+<div class="nihon">
+  <%= image_tag @nihon.picture_url, size: "250x200" if @nihon.picture? %>
+  <p><%= @nihon.content %></p>
+  <p><%= @nihon.body %></p>
+</div>
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@nihon, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<% @nihon_tags.each do |tag| %>
+  <% if tag.nihons.count > 0 %>
+    #<%= link_to tag.tag_name, tag_nihons_path(tag_id: tag.id) %>
+    <%= "(#{tag.nihons.count})" %>
+  <% end %>
+<% end %>
+
+
+<%= link_to "投稿一覧に戻る", post_nihons_path %>
+
+<%= link_to '評価する', lectures_new_path%>
+

@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'pnew', :media => "all" %>
+
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="container-sindan">
+        <div class="row">
+            <div class="col-12">
+                <p>Question1. どちらかと言うと…</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>豊潤でフルーティーな方が好き</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>ドライで飲みやすい方が好き</p>
+            </div>
+
+            <div class="col-12">
+                <p>Question2. 値段は...？</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>お手頃価格で...</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>多少値が張ってもうまければok</p>
+            </div>
+
+            <div class="col-12">
+                <p>Question3. 日本酒の酒類は…</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>吟醸酒に興味がある</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>純米酒に興味がある</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>醸造酒に興味がある</p>
+            </div>
+
+
+    
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit "post" %>
+    </div>
+<% end %>
